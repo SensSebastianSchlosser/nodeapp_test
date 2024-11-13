@@ -1,17 +1,16 @@
-version: "3"
 services:
  app:
   build:
    context: .
    dockerfile: Dockerfile
    args:
-    NODE_ENV: production # Übergibt NODE_ENV als Build-Argument
+    NODE_ENV: production
   working_dir: /app
   volumes:
-   - ./src:/app/src # Bindet den Quellcode für automatisches Neuladen ein
-   - /app/node_modules # Nutzt die node_modules innerhalb des Containers
+   - ./src:/app/src
+   - /app/node_modules
   env_file:
-   - .env # Nutzt deine lokale .env-Datei für die Entwicklung
+   - .env
   ports:
    - "9000:9000"
-  command: npm run docker-prod # Führt das Entwicklungs-Skript mit nodemon aus
+  command: npm run docker-prod
