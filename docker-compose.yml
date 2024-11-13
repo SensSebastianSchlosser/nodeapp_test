@@ -2,11 +2,11 @@ services:
  app:
   build:
    context: .
-   dockerfile: Dockerfile
+   dockerfile: dockerfile
   working_dir: /app
   volumes:
    - ./src:/app/src
   environment:
    - NODE_ENV=production
   ports:
-   - "3000:3000"
+   - "9000:9000"
