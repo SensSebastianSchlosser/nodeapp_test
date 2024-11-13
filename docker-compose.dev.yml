@@ -1,0 +1,18 @@
+# docker-compose.dev.yml
+version: "3"
+services:
+ app:
+  build:
+   context: .
+   dockerfile: Dockerfile
+   args:
+    NODE_ENV: development
+  working_dir: /app
+  volumes:
+   - ./src:/app/src
+   - /app/node_modules
+  env_file:
+   - .env.development
+  ports:
+   - "9000:9000"
+  command: npm run docker-dev

@@ -1,16 +1,20 @@
 {
-	"name": "node-app",
-	"description": "Nodeapp for CICD test",
-	"version": "0.0.1",
-	"private": true,
 	"dependencies": {
+		"dotenv": "^16.4.5",
 		"express": "4.17.1"
 	},
+	"description": "Nodeapp for CICD test",
 	"devDependencies": {
 		"mocha": "9.1.1",
 		"supertest": "6.1.6"
 	},
+	"name": "node-app",
+	"private": true,
 	"scripts": {
-		"start": "node src/index.js"
-	}
+		"start": "docker-compose -f docker-compose.dev.yml up --build",
+		"prod": "docker-compose up --build",
+		"docker-prod": "node src/index.js",
+		"docker-dev": "node --watch src/index.js"
+	},
+	"version": "0.0.1"
 }

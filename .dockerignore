@@ -1,4 +1,7 @@
-.idea
 node_modules
 npm-debug.log
-Jenkinsfile
+Dockerfile*
+docker-compose*
+.git
+.gitignore
+.env*
