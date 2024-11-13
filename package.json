@@ -11,8 +11,8 @@
 	"name": "node-app",
 	"private": true,
 	"scripts": {
-		"start": "docker-compose -f docker-compose.dev.yml up --build",
-		"prod": "docker-compose up --build",
+		"start": "docker compose -f docker-compose.dev.yml up --build",
+		"prod": "docker compose up --build",
 		"docker-prod": "node src/index.js",
 		"docker-dev": "node --watch src/index.js"
 	},
