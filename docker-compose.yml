@@ -2,10 +2,10 @@ services:
  app:
   build:
    context: .
-   dockerfile: dockerfile
+   dockerfile: dockerfile # Stelle sicher, dass der Dateiname korrekt ist
   working_dir: /app
   volumes:
-   - .:/app
+   - .:/app:ro # :ro macht das Volumen schreibgeschützt, falls nur zum Lesen nötig
   environment:
    - NODE_ENV=production
   command: ["node", "index.js"]
