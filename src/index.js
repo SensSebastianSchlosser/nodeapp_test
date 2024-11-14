@@ -1,6 +1,8 @@
 var express = require("express");
 var app = express();
 
+const PORT = process.env.HOST_PORT || process.env.PORT || 9000;
+
 app.get("/", function (req, res) {
 	const json = {
 		response:
@@ -15,5 +17,5 @@ app.get("/will", function (req, res) {
 app.get("/ready", function (req, res) {
 	res.send('{ "response": " Great!, It works!" }');
 });
-app.listen(process.env.HOST_PORT || process.env.PORT || 9000);
+app.listen(PORT, () => console.log("Listen to: " + PORT));
 module.exports = app;
