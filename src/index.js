@@ -4,7 +4,7 @@ var app = express();
 app.get("/", function (req, res) {
 	const json = {
 		response:
-			"DEV_BRANCH - Hello From Thetips4you changed" + "_" + process.env.TEST_NODE,
+			"DEV_BRANCH - Hello From Thetips4you changed_new_" + process.env.TEST_NODE,
 	};
 	res.json(json);
 });
