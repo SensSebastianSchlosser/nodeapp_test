@@ -1,0 +1,25 @@
+{
+	"name": "Node.js Development",
+	"dockerComposeFile": ["docker-compose.yml"],
+	"service": "app",
+	"workspaceFolder": "/app",
+	"settings": {
+		"terminal.integrated.defaultProfile.linux": "bash",
+		"editor.formatOnSave": true
+	},
+	"extensions": [
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"ms-vscode.vscode-typescript-next"
+	],
+	"forwardPorts": [3000],
+	"postCreateCommand": "npm install",
+	"remoteEnv": {
+		"NODE_ENV": "development"
+	},
+	"mounts": [
+		"source=${localWorkspaceFolder}/src,target=/app/src,type=bind",
+		"source=${localWorkspaceFolder}/node_modules,target=/app/node_modules,type=bind"
+	],
+	"shutdownAction": "stopCompose"
+}
